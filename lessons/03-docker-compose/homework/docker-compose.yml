@@ -1,0 +1,16 @@
+services:
+  greeter-he:
+    build:
+      context: ../../02-docker-basics/homework/greeter
+    environment:
+      GREETING: "Shalom"
+    ports:
+      - "9001:8000"
+
+  greeter-en:
+    build:
+      context: ../../02-docker-basics/homework/greeter
+    environment:
+      GREETING: "Hello"
+    ports:
+      - "9002:8000"
