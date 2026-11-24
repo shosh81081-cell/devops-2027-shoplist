@@ -6,3 +6,16 @@
 #   [ ] nodePort: 30080       (same indentation as port)
 #
 # Before apply: kubectl apply --dry-run=server -f kubernetes/frontend-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: shoplist
+spec:
+  type: NodePort
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
